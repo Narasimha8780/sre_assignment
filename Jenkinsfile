@@ -23,13 +23,7 @@ pipeline {
             }
         }
           
-        stage('K8S Deploy') {
-            steps {
-                withKubeConfig([credentialsId: 'k8s', serverUrl: '']) {
-                    sh ('kubectl apply -f  kube.yaml')
-                }
-            }
-        }
+        
         
         
       }
