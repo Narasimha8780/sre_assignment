@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: narasimha8780/jenkinstest
+        image: narasimha8780/sre_assignent:latest
         ports:
         - containerPort: 80
         imagePullPolicy: Always
