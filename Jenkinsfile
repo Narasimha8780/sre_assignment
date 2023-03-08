@@ -3,7 +3,7 @@ pipeline {
       stages {
         stage('Clone Repo') {
           steps {
-            sh 'rm -rf jenkinstest'
+            sh 'rm -rf sre_assignment'
             sh 'git clone https://github.com/Narasimha8780/sre_assignment.git'
             }
         }
