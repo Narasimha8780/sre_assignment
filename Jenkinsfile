@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-              sh 'docker build -t narasimha8780/sre_assignent:latest .'
+              sh 'docker build -t narasimha8780/sre_assignment:latest .'
               }
         }
         stage('Push Docker image') {
