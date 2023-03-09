@@ -22,7 +22,29 @@ pipeline {
                 sh    'docker push narasimha8780/sre_assignment:latest'
             }
         }
-          
+          stages{
+        stage("check the connection k8s cluster"){
+            steps{
+            script{
+                withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
+                   sh ' kubectl get po '
+                }
+              }
+            }
+        }
+        
+        stage("replacing the image name and deploying to the cluster"){
+            steps{
+                script {
+                withCredentials([kubeconfigFile(credentialsId: 'kubernetes-config', variable: 'KUBECONFIG')]) {
+                    sh '''
+                    sed -i "s;IMAGENAME;$imagename;" kube.yaml
+                    kubectl apply -f kube.yaml
+                    '''
+                  }
+                }
+            }
+        } 
         
         
         
