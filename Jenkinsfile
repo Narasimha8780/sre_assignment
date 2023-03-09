@@ -22,7 +22,7 @@ pipeline {
                 sh    'docker push narasimha8780/sre_assignment:latest'
             }
         }
-          stages{
+          
         stage("check the connection k8s cluster"){
             steps{
             script{
