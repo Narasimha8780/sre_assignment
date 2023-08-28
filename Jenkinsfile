@@ -21,7 +21,7 @@ pipeline {
 
               steps {
                 sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
-                sh    'docker push narasimha8780/sre_assignment:latest'
+                sh 'docker push narasimha8780/sre_assignment:latest'
             }
         }
           
